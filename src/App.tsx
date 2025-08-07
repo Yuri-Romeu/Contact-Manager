@@ -1,5 +1,15 @@
+import BarraLateral from './containers/BarraLateral';
+import EstiloGlobal, { Container } from './styles';
+
 function App() {
-     return <h1>ola mundo</h1>;
+     return (
+          <>
+               <EstiloGlobal />
+               <Container>
+                    <BarraLateral />
+               </Container>
+          </>
+     );
 }
 
 export default App;
