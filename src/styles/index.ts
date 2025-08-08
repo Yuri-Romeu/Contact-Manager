@@ -19,6 +19,8 @@ export const Container = styled.div`
      margin: 30px auto;
      padding: 16px;
      background-color: #fff;
+     display: grid;
+     grid-template-columns: 224px auto;
 `;
 
 export default EstiloGlobal;
