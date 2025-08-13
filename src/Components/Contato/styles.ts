@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { FaUserCircle } from 'react-icons/fa';
 import { FaRegTrashCan } from 'react-icons/fa6';
+import { MdOutlineModeEdit } from 'react-icons/md';
 
 export const ContatoContainer = styled.div`
      position: relative;
@@ -33,7 +34,9 @@ export const Email = styled.p`
      margin: 5px 0;
 `;
 
-export const Icon = styled(FaUserCircle)`
+export const Icon = styled(FaUserCircle as React.ComponentType).attrs({
+     size: 40,
+})`
      color: #1d73f7;
      position: absolute;
      left: 10px;
@@ -41,17 +44,9 @@ export const Icon = styled(FaUserCircle)`
      transform: translateY(-50%);
 `;
 
-export const IconDelete = styled(FaRegTrashCan)`
-     color: #ff4d4d;
-     cursor: pointer;
-     position: absolute;
-     right: 10px;
-     top: 10px;
-
-     &:hover {
-          color: #e60000;
-     }
-`;
+export const IconDelete = styled(FaRegTrashCan as React.ComponentType).attrs({
+     size: 20,
+})``;
 
 export const Classificacao = styled.span`
      font-size: 14px;
@@ -60,4 +55,34 @@ export const Classificacao = styled.span`
      padding: 5px 10px;
      border-radius: 10px;
      margin-top: 10px;
+`;
+
+export const IconEdit = styled(MdOutlineModeEdit as React.ComponentType).attrs({
+     size: 20,
+})`
+     color: #4d9affff;
+     cursor: pointer;
+     position: absolute;
+     right: 10px;
+     top: 45px;
+
+     &:hover {
+          color: #2b80f0ff;
+     }
+`;
+
+export const IconDeleteWrapper = styled.span`
+     cursor: pointer;
+     position: absolute;
+     right: 10px;
+     top: 10px;
+
+     svg {
+          color: #ff4d4d;
+          transition: color 0.3s ease;
+     }
+
+     &:hover svg {
+          color: #e60000;
+     }
 `;

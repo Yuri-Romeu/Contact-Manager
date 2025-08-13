@@ -1,21 +1,39 @@
-import { ContatoContainer, Email, Icon, Nome, Numero, IconDelete, Classificacao } from './styles';
+import {
+     ContatoContainer,
+     Email,
+     Icon,
+     Nome,
+     Numero,
+     IconDeleteWrapper,
+     Classificacao,
+     IconEdit,
+     IconDelete,
+} from './styles';
+
+import { useAppDispatch } from '../../store/hooks';
+import { excluirContato } from '../../slices/contatosSlice';
 
 type ContatoProps = {
+     id: number;
      nome: string;
      email: string;
      telefone: string;
      classificacao: 'Familia' | 'Amigos' | 'Trabalho' | 'Outros';
 };
 
-const Contato = ({ nome, email, telefone, classificacao }: ContatoProps) => {
+const Contato = ({ id, nome, email, telefone, classificacao }: ContatoProps) => {
+     const dispatch = useAppDispatch();
      return (
           <ContatoContainer>
-               <Icon size={40} />
+               <Icon />
                <Nome>{nome}</Nome>
                <Numero>{telefone}</Numero>
                <Email>{email}</Email>
                <Classificacao>{classificacao}</Classificacao>
-               <IconDelete size={20} />
+               <IconEdit />
+               <IconDeleteWrapper onClick={() => dispatch(excluirContato(id))}>
+                    <IconDelete />
+               </IconDeleteWrapper>
           </ContatoContainer>
      );
 };

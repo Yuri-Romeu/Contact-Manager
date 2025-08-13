@@ -42,7 +42,9 @@ export const ListaContatos = styled.div`
      gap: 20px;
 `;
 
-export const Icon = styled(IoIosSearch)`
+export const Icon = styled(IoIosSearch as React.ComponentType).attrs({
+     size: 22,
+})`
      position: absolute;
      left: 6px;
      top: 31%;
