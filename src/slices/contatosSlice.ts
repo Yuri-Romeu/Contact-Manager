@@ -53,11 +53,21 @@ const contatosSlice = createSlice({
           adicionarContato: (state, action) => {
                state.push(action.payload);
           },
+          editarContato: (state, action) => {
+               const { id, nome, email, telefone, classificacao } = action.payload;
+               const contato = state.find(contato => contato.id === id);
+               if (contato) {
+                    contato.nome = nome;
+                    contato.email = email;
+                    contato.telefone = telefone;
+                    contato.classificacao = classificacao;
+               }
+          },
           excluirContato: (state, action: PayloadAction<number>) => {
                return state.filter(contato => contato.id !== action.payload);
           },
      },
 });
 
-export const { adicionarContato, excluirContato } = contatosSlice.actions;
+export const { adicionarContato, excluirContato, editarContato } = contatosSlice.actions;
 export default contatosSlice.reducer;

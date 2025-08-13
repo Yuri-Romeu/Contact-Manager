@@ -59,7 +59,9 @@ export const Classificacao = styled.span`
 
 export const IconEdit = styled(MdOutlineModeEdit as React.ComponentType).attrs({
      size: 20,
-})`
+})``;
+
+export const IconEditWrapper = styled.span`
      color: #4d9affff;
      cursor: pointer;
      position: absolute;
