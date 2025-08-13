@@ -12,6 +12,9 @@ import {
      IconEdit,
      IconDelete,
      IconEditWrapper,
+     Input,
+     Select,
+     IconSave,
 } from './styles';
 
 type ContatoProps = {
@@ -52,25 +55,25 @@ const Contato = ({ id, nome, email, telefone, classificacao }: ContatoProps) => 
                <Icon />
 
                {isEditing ? (
-                    <input value={nomeEdit} onChange={e => setNomeEdit(e.target.value)} />
+                    <Input value={nomeEdit} onChange={e => setNomeEdit(e.target.value)} />
                ) : (
                     <Nome>{nome}</Nome>
                )}
 
                {isEditing ? (
-                    <input value={telefoneEdit} onChange={e => setTelefoneEdit(e.target.value)} />
+                    <Input value={telefoneEdit} onChange={e => setTelefoneEdit(e.target.value)} />
                ) : (
                     <Numero>{telefone}</Numero>
                )}
 
                {isEditing ? (
-                    <input value={emailEdit} onChange={e => setEmailEdit(e.target.value)} />
+                    <Input value={emailEdit} onChange={e => setEmailEdit(e.target.value)} />
                ) : (
                     <Email>{email}</Email>
                )}
 
                {isEditing ? (
-                    <select
+                    <Select
                          value={classificacaoEdit}
                          onChange={e => setClassificacaoEdit(e.target.value as any)}
                     >
@@ -78,14 +81,18 @@ const Contato = ({ id, nome, email, telefone, classificacao }: ContatoProps) => 
                          <option value="Amigos">Amigos</option>
                          <option value="Trabalho">Trabalho</option>
                          <option value="Outros">Outros</option>
-                    </select>
+                    </Select>
                ) : (
                     <Classificacao>{classificacao}</Classificacao>
                )}
 
                <IconEditWrapper onClick={() => setIsEditing(!isEditing)}>
-                    <IconEdit />
-                    {isEditing && <button onClick={handleSave}>Salvar</button>}
+                    <IconEdit isActive={isEditing} />
+                    {isEditing && (
+                         <span onClick={handleSave}>
+                              <IconSave />
+                         </span>
+                    )}
                </IconEditWrapper>
 
                <IconDeleteWrapper onClick={handleDelete}>

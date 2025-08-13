@@ -2,6 +2,11 @@ import styled from 'styled-components';
 import { FaUserCircle } from 'react-icons/fa';
 import { FaRegTrashCan } from 'react-icons/fa6';
 import { MdOutlineModeEdit } from 'react-icons/md';
+import { FaRegSave } from 'react-icons/fa';
+
+type Props = {
+     isActive?: boolean;
+};
 
 export const ContatoContainer = styled.div`
      position: relative;
@@ -48,6 +53,16 @@ export const IconDelete = styled(FaRegTrashCan as React.ComponentType).attrs({
      size: 20,
 })``;
 
+export const IconSave = styled(FaRegSave as React.ComponentType).attrs({
+     size: 20,
+})``;
+
+export const IconEdit = styled(MdOutlineModeEdit as React.ComponentType).attrs({
+     size: 20,
+})<Props>`
+     display: ${props => (props.isActive ? 'none' : 'block')};
+`;
+
 export const Classificacao = styled.span`
      font-size: 14px;
      background-color: #f0f2fb;
@@ -56,10 +71,6 @@ export const Classificacao = styled.span`
      border-radius: 10px;
      margin-top: 10px;
 `;
-
-export const IconEdit = styled(MdOutlineModeEdit as React.ComponentType).attrs({
-     size: 20,
-})``;
 
 export const IconEditWrapper = styled.span`
      color: #4d9affff;
@@ -87,4 +98,22 @@ export const IconDeleteWrapper = styled.span`
      &:hover svg {
           color: #e60000;
      }
+`;
+
+export const Input = styled.input`
+     width: 60%;
+     padding: 5px;
+     border: 1px solid #ccc;
+     border-radius: 4px;
+     margin-bottom: 10px;
+     color: #333;
+`;
+
+export const Select = styled.select`
+     width: 60%;
+     padding: 5px;
+     border: 1px solid #ccc;
+     border-radius: 4px;
+     margin-bottom: 10px;
+     color: #333;
 `;
