@@ -33,3 +33,12 @@ export const ClassificacaoItem = styled.li<Props>`
      padding: 10px;
      border-radius: 5px;
 `;
+
+export const Numeros = styled.span`
+     font-size: 16px;
+     color: #555;
+     background-color: #d9dfe9ff;
+     padding: 3px 7px;
+     border-radius: 15px;
+     margin-left: 5px;
+`;
