@@ -5,6 +5,7 @@ import { useState } from 'react';
 
 const ListaDeContatos = () => {
      const contatos = useAppSelector(state => state.contatos);
+     const classificacaoSelecionada = useAppSelector(state => state.filtro.classificacao);
 
      const [nomeBuscado, setNomeBuscado] = useState('');
 
@@ -12,9 +13,13 @@ const ListaDeContatos = () => {
           setNomeBuscado(e.target.value);
      };
 
-     const contatosFiltrados = contatos.filter(contato =>
-          contato.nome.toLowerCase().includes(nomeBuscado.toLowerCase()),
-     );
+     const contatosFiltrados = contatos
+          .filter(contato => contato.nome.toLowerCase().includes(nomeBuscado.toLowerCase()))
+          .filter(contato =>
+               classificacaoSelecionada === 'Todos'
+                    ? true
+                    : contato.classificacao === classificacaoSelecionada,
+          );
 
      return (
           <Container>
@@ -36,4 +41,5 @@ const ListaDeContatos = () => {
           </Container>
      );
 };
+
 export default ListaDeContatos;

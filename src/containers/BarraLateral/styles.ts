@@ -5,12 +5,16 @@ type Props = {
 };
 
 export const Container = styled.div`
+     position: sticky;
+     top: 0;
      display: flex;
      flex-direction: column;
-     justify-content: center;
+     height: 100vh;
      padding: 20px;
      border-right: 1px solid #eef1f6;
      width: 250px;
+     background-color: #fff;
+     overflow-y: auto;
 `;
 
 export const Title = styled.h1`
