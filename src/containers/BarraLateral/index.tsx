@@ -8,7 +8,6 @@ import {
 } from './styles';
 import { useAppSelector, useAppDispatch } from '../../store/hooks';
 import { alterarClassificacao } from '../../slices/filtroSlice';
-import { Link } from 'react-router-dom';
 
 type Props = {
      addContatos: boolean;

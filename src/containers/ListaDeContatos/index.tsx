@@ -36,6 +36,11 @@ const ListaDeContatos = () => {
                     </BotaoAdicionarContato>
                </div>
                <ListaContatos>
+                    {contatos.length === 0 && <p>Não há contatos cadastrados</p>}
+                    {contatosFiltrados.length === 0 && contatos.length > 0 && (
+                         <p>Contato não encontrado</p>
+                    )}
+
                     {contatosFiltrados.map(contato => (
                          <Contato key={contato.id} {...contato} />
                     ))}

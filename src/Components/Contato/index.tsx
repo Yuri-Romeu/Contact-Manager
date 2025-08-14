@@ -18,7 +18,7 @@ import {
 } from './styles';
 
 type ContatoProps = {
-     id: number;
+     id: string;
      nome: string;
      email: string;
      telefone: string;

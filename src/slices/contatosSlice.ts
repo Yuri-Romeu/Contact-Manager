@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface Contato {
-     id: number;
+     id: string;
      nome: string;
      email: string;
      telefone: string;
@@ -10,35 +10,35 @@ interface Contato {
 
 const initialState: Contato[] = [
      {
-          id: 1,
+          id: '1',
           nome: 'Yuri Romeu',
           email: 'Yuri@gmail.com',
           telefone: '(11) 99999-9999',
           classificacao: 'Familia',
      },
      {
-          id: 2,
+          id: '2',
           nome: 'Ciclano',
           email: 'ciclano@ig.com.br',
           telefone: '(55) 88888-8888',
           classificacao: 'Trabalho',
      },
      {
-          id: 3,
+          id: '3',
           nome: 'Beltrano',
           email: 'beltrano@ig.com.br',
           telefone: '(32) 77777-7777',
           classificacao: 'Amigos',
      },
      {
-          id: 4,
+          id: '4',
           nome: 'João',
           email: 'joao@ig.com.br',
           telefone: '(21) 66666-6666',
           classificacao: 'Outros',
      },
      {
-          id: 5,
+          id: '5',
           nome: 'Maria',
           email: 'maria@ig.com.br',
           telefone: '(11) 55555-5555',
@@ -63,7 +63,7 @@ const contatosSlice = createSlice({
                     contato.classificacao = classificacao;
                }
           },
-          excluirContato: (state, action: PayloadAction<number>) => {
+          excluirContato: (state, action: PayloadAction<string>) => {
                return state.filter(contato => contato.id !== action.payload);
           },
      },
