@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 type Props = {
@@ -28,6 +29,7 @@ export const Classificacao = styled.ul`
 `;
 
 export const ClassificacaoItem = styled.li<Props>`
+     list-style: none;
      font-size: 18px;
      color: #000;
      font-weight: 400;
@@ -36,6 +38,23 @@ export const ClassificacaoItem = styled.li<Props>`
      background-color: ${props => (props.isActive ? '#F2F7FC' : 'transparent')};
      padding: 10px;
      border-radius: 5px;
+`;
+
+export const ClassificacaoItemLink = styled(Link)<Props>`
+     list-style: none;
+     font-size: 18px;
+     color: #000;
+     font-weight: 400;
+     margin-bottom: 5px;
+     cursor: pointer;
+     background-color: ${props => (props.isActive ? '#F2F7FC' : 'transparent')};
+     padding: 10px;
+     border-radius: 5px;
+     text-decoration: none;
+
+     &:hover {
+          background-color: #f2f7fc;
+     }
 `;
 
 export const Numeros = styled.span`

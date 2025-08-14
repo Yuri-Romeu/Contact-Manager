@@ -31,7 +31,9 @@ const ListaDeContatos = () => {
                          value={nomeBuscado}
                          onChange={buscarNome}
                     />
-                    <BotaoAdicionarContato>Add Contact</BotaoAdicionarContato>
+                    <BotaoAdicionarContato to="/adicionar-contato">
+                         Add Contact
+                    </BotaoAdicionarContato>
                </div>
                <ListaContatos>
                     {contatosFiltrados.map(contato => (

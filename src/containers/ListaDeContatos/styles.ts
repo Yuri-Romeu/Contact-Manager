@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { IoIosSearch } from 'react-icons/io';
+import { Link } from 'react-router-dom';
 
 export const Container = styled.main`
      padding: 20px;
@@ -22,7 +23,8 @@ export const SearchInput = styled.input`
      }
 `;
 
-export const BotaoAdicionarContato = styled.button`
+export const BotaoAdicionarContato = styled(Link)`
+     text-decoration: none;
      padding: 10px 20px;
      background-color: #1d73f7;
      color: #fff;
