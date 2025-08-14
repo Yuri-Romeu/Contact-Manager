@@ -5,7 +5,7 @@ interface Contato {
      nome: string;
      email: string;
      telefone: string;
-     classificacao: 'Familia' | 'Amigos' | 'Trabalho' | 'Outros';
+     classificacao: 'Family' | 'Friends' | 'Work' | 'Others';
 }
 
 const carregarContatos = (): Contato[] => {

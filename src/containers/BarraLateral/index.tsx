@@ -26,11 +26,11 @@ const BarraLateral = ({ addContatos }: Props = { addContatos: false }) => {
 
      return (
           <Container>
-               <Title>Contact</Title>
+               <Title>Contatos</Title>
                {addContatos && (
                     <>
-                         <ClassificacaoItem isActive>Adicionar Contatos</ClassificacaoItem>
-                         <ClassificacaoItemLink to="/">Voltar</ClassificacaoItemLink>
+                         <ClassificacaoItem isActive>Add Contacts</ClassificacaoItem>
+                         <ClassificacaoItemLink to="/">Back</ClassificacaoItemLink>
                     </>
                )}
 
@@ -40,35 +40,35 @@ const BarraLateral = ({ addContatos }: Props = { addContatos: false }) => {
                               isActive={classificacaoSelecionada === 'Todos'}
                               onClick={() => mudarFiltro('Todos')}
                          >
-                              Todos <Numeros>{contatos.length}</Numeros>
+                              All <Numeros>{contatos.length}</Numeros>
                          </ClassificacaoItem>
 
                          <ClassificacaoItem
-                              isActive={classificacaoSelecionada === 'Familia'}
-                              onClick={() => mudarFiltro('Familia')}
+                              isActive={classificacaoSelecionada === 'Family'}
+                              onClick={() => mudarFiltro('Family')}
                          >
-                              Familia <Numeros>{contar('Familia')}</Numeros>
+                              Family <Numeros>{contar('Family')}</Numeros>
                          </ClassificacaoItem>
 
                          <ClassificacaoItem
-                              isActive={classificacaoSelecionada === 'Amigos'}
-                              onClick={() => mudarFiltro('Amigos')}
+                              isActive={classificacaoSelecionada === 'Friends'}
+                              onClick={() => mudarFiltro('Friends')}
                          >
-                              Amigos <Numeros>{contar('Amigos')}</Numeros>
+                              Friends <Numeros>{contar('Friends')}</Numeros>
                          </ClassificacaoItem>
 
                          <ClassificacaoItem
-                              isActive={classificacaoSelecionada === 'Trabalho'}
-                              onClick={() => mudarFiltro('Trabalho')}
+                              isActive={classificacaoSelecionada === 'Work'}
+                              onClick={() => mudarFiltro('Work')}
                          >
-                              Trabalho <Numeros>{contar('Trabalho')}</Numeros>
+                              Work <Numeros>{contar('Work')}</Numeros>
                          </ClassificacaoItem>
 
                          <ClassificacaoItem
-                              isActive={classificacaoSelecionada === 'Outros'}
-                              onClick={() => mudarFiltro('Outros')}
+                              isActive={classificacaoSelecionada === 'Others'}
+                              onClick={() => mudarFiltro('Others')}
                          >
-                              Outros <Numeros>{contar('Outros')}</Numeros>
+                              Others <Numeros>{contar('Others')}</Numeros>
                          </ClassificacaoItem>
                     </Classificacao>
                )}

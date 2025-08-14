@@ -22,7 +22,7 @@ type ContatoProps = {
      nome: string;
      email: string;
      telefone: string;
-     classificacao: 'Familia' | 'Amigos' | 'Trabalho' | 'Outros';
+     classificacao: 'Family' | 'Friends' | 'Work' | 'Others';
 };
 
 const Contato = ({ id, nome, email, telefone, classificacao }: ContatoProps) => {
@@ -77,10 +77,10 @@ const Contato = ({ id, nome, email, telefone, classificacao }: ContatoProps) => 
                          value={classificacaoEdit}
                          onChange={e => setClassificacaoEdit(e.target.value as any)}
                     >
-                         <option value="Familia">Familia</option>
-                         <option value="Amigos">Amigos</option>
-                         <option value="Trabalho">Trabalho</option>
-                         <option value="Outros">Outros</option>
+                         <option value="Family">Family</option>
+                         <option value="Friends">Friends</option>
+                         <option value="Work">Work</option>
+                         <option value="Others">Others</option>
                     </Select>
                ) : (
                     <Classificacao>{classificacao}</Classificacao>

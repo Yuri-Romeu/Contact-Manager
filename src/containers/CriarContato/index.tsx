@@ -15,6 +15,8 @@ const CriarContato = () => {
      const adicionarContato = (e: FormEvent<HTMLFormElement>) => {
           e.preventDefault();
 
+          if (!nome || !email || !telefone || !classificacao) return alert('Fill in all fields');
+
           dispatch(
                adicionarContatoReducer({
                     id: uuidv4(),
@@ -33,40 +35,40 @@ const CriarContato = () => {
 
      return (
           <Container as={'form'} onSubmit={adicionarContato}>
-               <Title>Criar Contato</Title>
+               <Title>Create Contact</Title>
                <Icon />
 
                <InputAddContato
-                    id="Nome"
+                    id="Name"
                     type="text"
-                    placeholder="Digite Seu Nome"
+                    placeholder="Enter Your Name"
                     value={nome}
                     onChange={e => setNome(e.target.value)}
                />
                <InputAddContato
                     id="Email"
                     type="email"
-                    placeholder="Digite Seu Email Principal"
+                    placeholder="Enter Your Email Address"
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                />
                <InputAddContato
-                    id="Telefone"
+                    id="Phone"
                     type="tel"
-                    placeholder="Digite Seu Numero"
+                    placeholder="Enter Your Phone Number"
                     value={telefone}
                     onChange={e => setTelefone(e.target.value)}
                />
                <Select value={classificacao} onChange={e => setClassificacao(e.target.value)}>
-                    <option value="">Selecione uma classificação</option>
-                    <option value="Familia">Familia</option>
-                    <option value="Amigos">Amigos</option>
-                    <option value="Trabalho">Trabalho</option>
-                    <option value="Outros">Outros</option>
+                    <option value="">Select a rating</option>
+                    <option value="Family">Family</option>
+                    <option value="Friends">Friends</option>
+                    <option value="Work">Work</option>
+                    <option value="Others">Others</option>
                </Select>
 
                <Adicionar as="button" type="submit">
-                    Adicionar Contato
+                    Add Contact
                </Adicionar>
           </Container>
      );

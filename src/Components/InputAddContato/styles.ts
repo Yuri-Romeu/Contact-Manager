@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
-export const Input = styled.input`
+type Props = {
+     vazio?: boolean;
+};
+
+export const Input = styled.input<Props>`
      width: 60%;
      padding: 10px 20px;
      border: 1px solid #ccc;
@@ -8,6 +12,7 @@ export const Input = styled.input`
      margin-bottom: 20px;
      color: #333;
      margin-right: 10px;
+     border-color: ${props => (props.vazio ? '#f00' : '#ccc')};
 `;
 
 export const Label = styled.label`
